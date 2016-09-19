@@ -40,7 +40,7 @@ Mine looks something like this:
 
 If everything went well, you will receive a successful response payload containing a message id (mid).
 ```json
-{'data': {'mid': 'a674e9ec6f24495f845f96d704fd9473'}}
+{"data": {"mid": "a674e9ec6f24495f845f96d704fd9473"}}
 ```
 
 Great new!    You just sent your first message to ARTIKCloud.  Now try retreiving the last message that was sent to the device.  It also contains the same message id (mid)
