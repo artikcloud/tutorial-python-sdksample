@@ -1,17 +1,21 @@
 # ARTIKCloud Python Starter Code
 
+Starter code using the [ARTIK Cloud SDK for python](https://github.com/artikcloud/artikcloud-python)
 
 ### Requirements:
 * python 2.7+,  3.5
-* setuptools, pip
+* pip, or setuptools (see python sdk for installation)
 
+```
+pip install artikcloud
+```
 
 ### Setup / Installation:
 
- 1. [Create an ARTIKCloud developer account](https://developer.artik.cloud/)
+ 1. [Create an ARTIK Cloud Account](https://artik.cloud/)
  2. [Connect your first ArtikCloud Device](https://artik.cloud/my/devices) by adding one to your device dashboard.  
     * Visit https://artik.cloud/my/devices to connect a device.
-    * Select the Fire Sensor (from cloud.artik.samples.firesensor) and name your sensor SampleFireSensor.  
+    * Select the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).  
     * Go to Settings (gear icon) for the device you just created to retrieve your **Device Id** and generated **Device Token**. 
  3. Import artikcloud package using setuptools or installing with pip.  
      * [See Install ARTIKCloud SDK package for python](https://github.com/artikcloud/artikcloud-python) 
@@ -60,7 +64,7 @@ Below is the response.  We see that it has recorded a 'temp' value of 183 earlie
            'mid': 'a674e9ec6f24495f845f96d704fd9473',
            'mv': 1,
            'sdid': '<Redacted>',
-           'sdtid': 'dt856e54302a294fba80414b87eb7b79a3',
+           'sdtid': 'dtce45703593274ba0b4feedb83bc152d8',
            'ts': 1474269704021,
            'uid': '<Redacted>'}],
  'end_date': None,
@@ -109,9 +113,9 @@ api_instance.get_last_normalized_messages(count=count, sdids=sdids, field_presen
 ## Demo / Screenshots
 Have you visited your [ARTIK Cloud Dashboard](https://artik.cloud/my/devices)?
 
-Select your device from the dashboard and view your device data in realtime.   Try running the ./app-send-message.py multiple times in your terminal to send a few random values.
+Select your device from the dashboard to view your device data in realtime.   Try running the ./app-send-message.py multiple times in your terminal to send a few random values.  Here's a screenshot:
 
-![GitHub Logo](./img/img-demo-send-message.gif)
+![GitHub Logo](./img/screenshot-firesensor-datachart.png)
 
 ## References
 * [Reference ARTIKCloud SDK for python](https://github.com/artikcloud/artikcloud-python) for more SDK usage examples.
