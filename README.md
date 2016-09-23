@@ -4,7 +4,7 @@ Starter code using the [ARTIK Cloud SDK for python](https://github.com/artikclou
 
 ### Requirements:
 * python 2.7+,  3.5
-* pip, or setuptools (see python sdk for installation)
+* pip, or setuptools (if not using pip)
 
 ```
 pip install artikcloud
