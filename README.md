@@ -32,7 +32,7 @@ Run the following command in your termainal, which will send a random temperatur
 ```bash
 %> python app-send-message.py
 ```
-If everything goes well, you will receive a response with a message id (mid). ARTIK Cloud uses this response to acknowledges the receipt of the message.
+If everything goes well, you will receive a response with a message id (mid). ARTIK Cloud uses this response to acknowledge the receipt of the message.
 ```json
 {"data": {"mid": "a674e9ec6f24495f845f96d704fd9473"}}
 ```
