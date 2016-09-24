@@ -27,29 +27,22 @@ The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/art
 
 ## Run the code
 
-### Send a message 
+### 1. Send a message 
 Run the following command in your termainal, which will send a random temperature value to ARTIK Cloud on behalf of the device. 
-
 ```bash
 %> python app-send-message.py
 ```
-
-If everything went well, you will receive a successful response payload containing a message id (mid).
+If everything goes well, you will receive a response with a message id (mid). ARTIK Cloud uses this response to acknowledges the receipt of the message.
 ```json
 {"data": {"mid": "a674e9ec6f24495f845f96d704fd9473"}}
 ```
 
-Great new! You just sent your first message to ARTIK Cloud.  Now try retreiving the last message that was sent to the device.  It also contains the same message id (mid)
-
-### Get a message
-Retrieve the last message sent from the device.
-
+### 2. Get a message
+Retrieve from ARTIK Cloud the last message sent by the device.
 ```
 %> python app-get-last-normalized-messages.py
 ```
-
-Below is the response.  We see that it has recorded a 'temp' value of 183 earlier when it was sent a random value.
-
+Below is the response. It has a 'temp' value of 183 that was sent earlier.
 ```
 {'count': 1,
  'data': [{'cts': 1474269704021,
@@ -70,7 +63,7 @@ Below is the response.  We see that it has recorded a 'temp' value of 183 earlie
  'uid': None}
 ```
 
-## Explain the implementation
+## Peek into the implementation
 Take a closer look at the following files:
 * ./app-send-message.py 
 * ./app-get-last-normalized-messages.py
@@ -89,7 +82,7 @@ artikcloud.configuration = artikcloud.Configuration();
 artikcloud.configuration.access_token = config['deviceToken']
 ```
 
-The send_message() and get_last_normalized_messages() is part of the MessagesAPI so we create an instance of it to make the api call.
+The two methods send_message() and get_last_normalized_messages() are the part of the MessagesAPI. Lets create an instance of it to make the api call.
 
 ```python
 #instance for MessageAPI
@@ -114,7 +107,7 @@ Select your device from the charts to view your device data in realtime.   Try r
 
 ## More examples
 
-Peek into [tests](https://github.com/artikcloud/artikcloud-python/tree/master/test) of ARTIK Cloud Python SDK for more SDK usage examples.
+Peek into [tests](https://github.com/artikcloud/artikcloud-python/tree/master/test) in ARTIK Cloud Python SDK for more SDK usage examples.
 
 More about ARTIK Cloud
 ---------------
