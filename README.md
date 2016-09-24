@@ -1,6 +1,6 @@
 # ARTIKCloud Python tutorial
 
-The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/artikcloud-python)
+The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/artikcloud-python).
 
 ### Prerequisites
 * python 2.7+, 3.5
@@ -15,6 +15,7 @@ The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/art
 ```
 pip install artikcloud
 ```
+
  4. Prepare source file. Rename the **template_config.json** to **config.json** under /config/. Then copy the device ID and device token obtained before to config.json file. The following is the example:
 ```json
 {
@@ -112,6 +113,25 @@ Select your device from the charts to view your device data in realtime.   Try r
 
 ![GitHub Logo](./img/screenshot-firesensor-datachart.png)
 
-## Want to learn more
+## More examples
 
 Peek into [tests](https://github.com/artikcloud/artikcloud-python/tree/master/test) of ARTIK Cloud Python SDK for more SDK usage examples.
+
+More about ARTIK Cloud
+---------------
+
+If you are not familiar with ARTIK Cloud, we have extensive documentation at https://developer.artik.cloud/documentation
+
+The full ARTIK Cloud API specification can be found at https://developer.artik.cloud/documentation/api-reference/
+
+Peek into advanced sample applications at https://developer.artik.cloud/documentation/samples/
+
+To create and manage your services and devices on ARTIK Cloud, visit the Developer Dashboard at https://developer.artik.cloud
+
+License and Copyright
+---------------------
+
+Licensed under the Apache License. See [LICENSE](https://github.com/artikcloud/tutorial-python-sdksample/blob/master/LICENSE).
+
+Copyright (c) 2016 Samsung Electronics Co., Ltd.
+
