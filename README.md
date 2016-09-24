@@ -15,7 +15,7 @@ The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/art
   ```
   pip install artikcloud
   ```
- 4. Prepare source file. Rename the **template_config.json** to **config.json** under /config/. Then copy the device ID and device token obtained before to config.json file. The following is the example:
+ 4. Prepare source files. Rename **template_config.json** to **config.json** under /config/. Then copy the device ID and device token obtained before to config.json file. The following is the example:
 ```json
 {
   "sampleFireSensor": {
