@@ -1,42 +1,34 @@
-# ARTIKCloud Python Starter Code
+# ARTIKCloud Python tutorial
 
-Starter code using the [ARTIK Cloud SDK for python](https://github.com/artikcloud/artikcloud-python)
+The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/artikcloud-python)
 
-### Requirements:
-* python 2.7+,  3.5
-* pip, or setuptools (if not using pip)
-
-```
-pip install artikcloud
-```
+### Prerequisites
+* python 2.7+, 3.5
+* pip or setuptools
 
 ### Setup / Installation:
 
- 1. [Create an ARTIK Cloud Account](https://artik.cloud/)
- 2. [Connect your first ArtikCloud Device](https://artik.cloud/my/devices) by adding one to your device dashboard.  
-    * Visit https://artik.cloud/my/devices to connect a device.
-    * Select the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).  
-    * Go to Settings (gear icon) for the device you just created to retrieve your **Device Id** and generated **Device Token**. 
- 3. Import artikcloud package using setuptools or installing with pip.  
-     * [See Install ARTIKCloud SDK package for python](https://github.com/artikcloud/artikcloud-python) 
-
-
-## Run the code
-
-
-1. Rename the **template_config.json** to **/config/config.json**.  Then fill in your DeviceID and DeviceToken in the /config/config.json file.
-
-Mine looks something like this:
+ 1. Sign into [My ARTIK Cloud](https://artik.cloud/)
+ 2. On the device dashboard, click to connect a new device. Select the Demo Fire Sensor (from cloud.artik.sample.demofiresensor) and name your sensor SampleFireSensor (or any name you'd like).
+ 3. Go to Settings icon for the device you just added. Get the **device ID** and **device token**. If the token does not already exist, click "GENERATE DEVICE TOKEN…" to get one.
+ 3. Install ARTIK Cloud Python SDK using pip as following
+```
+pip install artikcloud
+```
+ 4. Prepare source file. Rename the **template_config.json** to **config.json** under /config/. Then copy the device ID and device token obtained before to config.json file. The following is the example:
 ```json
 {
-	"sampleFireSensor": {
-		"deviceId": "999aaabbbcccdddeeefffggg",
-		"deviceToken": "000111222333444555aaabbbccc"
-	}
+  "sampleFireSensor": {
+    "deviceId": "999aaabbbcccdddeeefffggg",
+    "deviceToken": "000111222333444555aaabbbccc"
+  }
 }
 ```
 
-2. Run the following command in your termainal.  This demo will send a random temperature value to your ARTIKCloud device.  
+## Run the code
+
+### Send a message 
+Run the following command in your termainal, which will send a random temperature value to ARTIK Cloud on behalf of the device. 
 
 ```bash
 %> python app-send-message.py
@@ -47,16 +39,17 @@ If everything went well, you will receive a successful response payload containi
 {"data": {"mid": "a674e9ec6f24495f845f96d704fd9473"}}
 ```
 
-Great new!    You just sent your first message to ARTIKCloud.  Now try retreiving the last message that was sent to the device.  It also contains the same message id (mid)
+Great new! You just sent your first message to ARTIK Cloud.  Now try retreiving the last message that was sent to the device.  It also contains the same message id (mid)
 
-## Next Steps
-### Try Retrieving the last message sent to device.  
+### Get a message
+Retrieve the last message sent from the device.
 
 ```
 %> python app-get-last-normalized-messages.py
 ```
 
 Below is the response.  We see that it has recorded a 'temp' value of 183 earlier when it was sent a random value.
+
 ```
 {'count': 1,
  'data': [{'cts': 1474269704021,
@@ -75,32 +68,33 @@ Below is the response.  We see that it has recorded a 'temp' value of 183 earlie
  'size': 1,
  'start_date': None,
  'uid': None}
- ```
- 
-### Take a closer look inside the following files:
+```
+
+## Explain the implementation
+Take a closer look at the following files:
 * ./app-send-message.py 
 * ./app-get-last-normalized-messages.py
 
+Import the artikcloud package:
 
-### Code details:
-Import the artikcloud package
 ```python
 import artikcloud
 from artikcloud.rest import ApiException
 ```
 
-Setup credentials for your api call.  Here we use have used the Device Token to make our API calls.
+Setup credentials for your api call. Here we have used the device token to make our API calls.
+
 ```python
 artikcloud.configuration = artikcloud.Configuration();
 artikcloud.configuration.access_token = config['deviceToken']
 ```
 
 The send_message() and get_last_normalized_messages() is part of the MessagesAPI so we create an instance of it to make the api call.
+
 ```python
 #instance for MessageAPI
 api_instance = artikcloud.MessagesApi()
 ```
-
 
 ```python
 #send message
@@ -110,12 +104,14 @@ api_instance.send_message(data)
 api_instance.get_last_normalized_messages(count=count, sdids=sdids, field_presence=field_presence)
 ```
 
-## Demo / Screenshots
-Have you visited your [ARTIK Cloud Dashboard](https://artik.cloud/my/devices)?
+## View your data in My ARTIK Cloud
 
-Select your device from the dashboard to view your device data in realtime.   Try running the ./app-send-message.py multiple times in your terminal to send a few random values.  Here's a screenshot:
+Have you visited ARTIK Cloud [data visualization tool](https://artik.cloud/my/data)?
+
+Select your device from the charts to view your device data in realtime.   Try running the ./app-send-message.py multiple times in your terminal to send a few random values.  Here's a screenshot:
 
 ![GitHub Logo](./img/screenshot-firesensor-datachart.png)
 
-## References
-* [Reference ARTIKCloud SDK for python](https://github.com/artikcloud/artikcloud-python) for more SDK usage examples.
+## Want to learn more
+
+Peek into [tests](https://github.com/artikcloud/artikcloud-python/tree/master/test) of ARTIK Cloud Python SDK for more SDK usage examples.
