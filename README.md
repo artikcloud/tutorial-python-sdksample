@@ -82,13 +82,14 @@ artikcloud.configuration = artikcloud.Configuration();
 artikcloud.configuration.access_token = config['deviceToken']
 ```
 
-The two methods send_message() and get_last_normalized_messages() are the part of the MessagesAPI. Lets create an instance of it to make the api call.
+The two methods send_message() and get_last_normalized_messages() are the part of the MessagesAPI. Lets create an instance of it first.
 
 ```python
 #instance for MessageAPI
 api_instance = artikcloud.MessagesApi()
 ```
 
+Method send_message() triggers [POST a message REST call](https://developer.artik.cloud/documentation/api-reference/rest-api.html#post-a-message-or-action). Method get_last_normalized_messages() triggers [Get the last message REST call](https://developer.artik.cloud/documentation/api-reference/rest-api.html#get-last-normalized-messages)
 ```python
 #send message
 api_instance.send_message(data)
