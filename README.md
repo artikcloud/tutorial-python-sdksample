@@ -1,6 +1,6 @@
-# ARTIKCloud Python tutorial
+# ARTIK Cloud Python SDK starter code
 
-The tutorial uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/artikcloud-python).
+This sample code sends and gets a message to and from ARTIK Cloud. It uses the [ARTIK Cloud Python SDK](https://github.com/artikcloud/artikcloud-python) to make REST API calls.
 
 ### Prerequisites
 * python 2.7+, 3.5
@@ -126,7 +126,7 @@ To create and manage your services and devices on ARTIK Cloud, visit the Develop
 License and Copyright
 ---------------------
 
-Licensed under the Apache License. See [LICENSE](https://github.com/artikcloud/tutorial-python-sdksample/blob/master/LICENSE).
+Licensed under the Apache License. See [LICENSE](LICENSE).
 
 Copyright (c) 2016 Samsung Electronics Co., Ltd.
 
