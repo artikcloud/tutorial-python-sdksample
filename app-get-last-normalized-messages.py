@@ -38,7 +38,7 @@ def main(argv):
 	    api_response = api_instance.get_last_normalized_messages(sdids=sdids)
 	    pprint(api_response)
 	except ApiException as e:
-	    print "Exception when calling MessagesApi->get_last_normalized_messages: %s\n" % e
+	    pprint("Exception when calling MessagesApi->get_last_normalized_messages: %s\n" % e)
 
 
 if __name__ == "__main__":

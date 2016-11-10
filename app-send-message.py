@@ -48,7 +48,7 @@ def main(argv):
 	    api_response = api_instance.send_message(data)
 	    pprint(api_response)
 	except ApiException as e:
-	    print "Exception when calling MessagesApi->send_message: %s\n" % e
+	    pprint("Exception when calling MessagesApi->send_message: %s\n" % e)
 
 
 if __name__ == "__main__":
