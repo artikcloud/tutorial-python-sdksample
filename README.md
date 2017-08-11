@@ -17,13 +17,11 @@ This sample code sends and gets a message to and from ARTIK Cloud. It uses the [
   pip install artikcloud
   ```
 
- 4. Prepare source files. Rename **template_config.json** to **config.json** under /config/. Then copy the device ID and device token obtained before to config.json file. The following is the example:
+ 4. Add the device ID and device token obtained before to config.json file. The following is the example:
 ```json
 {
-  "sampleFireSensor": {
-    "deviceId": "999aaabbbcccdddeeefffggg",
-    "deviceToken": "000111222333444555aaabbbccc"
-  }
+    "device_id": "999aaabbbcccdddeeefffggg",
+    "device_token": "000111222333444555aaabbbccc"
 }
 ```
 
@@ -81,7 +79,7 @@ Setup credentials for your api call. Here we have used the device token to make 
 
 ```python
 artikcloud.configuration = artikcloud.Configuration();
-artikcloud.configuration.access_token = config['deviceToken']
+artikcloud.configuration.access_token = config['device_id']
 ```
 
 The two methods send_message() and get_last_normalized_messages() are the part of the MessagesAPI. Lets create an instance of it first.

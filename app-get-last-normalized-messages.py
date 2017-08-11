@@ -9,16 +9,16 @@ from pprint import pprint
 # https://github.com/artikcloud/artikcloud-python
 def main(argv):
 
-	DEFAULT_CONFIG_PATH = 'config/config.json'
+	DEFAULT_CONFIG_PATH = 'config.json'
 
 	with open(DEFAULT_CONFIG_PATH, 'r') as config_file:
-		config = json.load(config_file)['sampleFireSensor']
+		config = json.load(config_file)
 	print(config)
 
 	# Configure Oauth2 access_token for the client application.  Here we have used
 	# the device token for the configuration
 	artikcloud.configuration = artikcloud.Configuration();
-	artikcloud.configuration.access_token = config['deviceToken']
+	artikcloud.configuration.access_token = config['device_token']
 	
 	# We create an instance of the Message API class which provides
 	# the send_message() and get_last_normalized_messages() api call
@@ -26,7 +26,7 @@ def main(argv):
 	api_instance = artikcloud.MessagesApi()
 
 	# parameters for our request	
-	sdids = config['deviceId'] # str | Comma separated list of source device IDs (minimum: 1). (required)
+	sdids = config['device_id'] # str | Comma separated list of source device IDs (minimum: 1). (required)
 	#count = 10 # int | Number of items to return per query. (optional)
 	#field_presence = None # str | String representing a field from the specified device ID. (optional)
 

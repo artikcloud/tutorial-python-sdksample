@@ -8,16 +8,16 @@ from pprint import pprint
 # https://github.com/artikcloud/artikcloud-python
 def main(argv):
 
-	DEFAULT_CONFIG_PATH = 'config/config.json'
+	DEFAULT_CONFIG_PATH = 'config.json'
 
 	with open(DEFAULT_CONFIG_PATH, 'r') as config_file:
-		config = json.load(config_file)['sampleFireSensor']
+		config = json.load(config_file)
 	print(config)
 
 	# Configure Oauth2 access_token for the client application.  Here we have used
 	# the device token for the configuration
 	artikcloud.configuration = artikcloud.Configuration();
-	artikcloud.configuration.access_token = config['deviceToken']
+	artikcloud.configuration.access_token = config['device_token']
 
 	# We create an instance of the Message API class which provides
 	# the send_message() and get_last_normalized_messages() api call
@@ -32,7 +32,7 @@ def main(argv):
 	device_message['temp'] = random.randrange(0,200);
 
 	# Set the 'device id' - value from your config.json file
-	device_sdid = config['deviceId']
+	device_sdid = config['device_id']
 
 	# set your custom timestamp
 	ts = None
